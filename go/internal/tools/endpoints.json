@@ -1,0 +1,164 @@
+[
+  {
+    "pathPattern": "/self",
+    "method": "get",
+    "toolName": "economic-self",
+    "llmTip": "Returns information about the current e-conomic agreement/company, including company name, agreement number, and modules."
+  },
+  {
+    "pathPattern": "/customers",
+    "method": "get",
+    "toolName": "economic-list-customers",
+    "llmTip": "Returns paginated list of customers. Use filter param e.g. filter=name$like:*john* or filter=customerNumber$gte:100. Use pagesize (max 1000) and skippages for pagination."
+  },
+  {
+    "pathPattern": "/customers/{customerNumber}",
+    "method": "get",
+    "toolName": "economic-get-customer",
+    "llmTip": "Returns full details of a single customer by their customer number."
+  },
+  {
+    "pathPattern": "/suppliers",
+    "method": "get",
+    "toolName": "economic-list-suppliers",
+    "llmTip": "Returns paginated list of suppliers. Use filter param e.g. filter=name$like:*acme*."
+  },
+  {
+    "pathPattern": "/suppliers/{supplierNumber}",
+    "method": "get",
+    "toolName": "economic-get-supplier",
+    "llmTip": "Returns full details of a single supplier by number."
+  },
+  {
+    "pathPattern": "/products",
+    "method": "get",
+    "toolName": "economic-list-products",
+    "llmTip": "Returns paginated list of products. Use filter param e.g. filter=name$like:*widget*."
+  },
+  {
+    "pathPattern": "/products/{productNumber}",
+    "method": "get",
+    "toolName": "economic-get-product",
+    "llmTip": "Returns full details of a single product by product number."
+  },
+  {
+    "pathPattern": "/invoices/drafts",
+    "method": "get",
+    "toolName": "economic-list-invoices-drafts",
+    "llmTip": "Returns paginated list of draft invoices."
+  },
+  {
+    "pathPattern": "/invoices/drafts/{draftInvoiceNumber}",
+    "method": "get",
+    "toolName": "economic-get-invoice-draft",
+    "llmTip": "Returns full details of a draft invoice."
+  },
+  {
+    "pathPattern": "/invoices/booked",
+    "method": "get",
+    "toolName": "economic-list-invoices-booked",
+    "llmTip": "Returns paginated list of booked (finalized) invoices."
+  },
+  {
+    "pathPattern": "/invoices/booked/{bookedInvoiceNumber}",
+    "method": "get",
+    "toolName": "economic-get-invoice-booked",
+    "llmTip": "Returns full details of a booked invoice."
+  },
+  {
+    "pathPattern": "/orders/drafts",
+    "method": "get",
+    "toolName": "economic-list-orders-drafts",
+    "llmTip": "Returns paginated list of draft orders."
+  },
+  {
+    "pathPattern": "/orders/drafts/{orderNumber}",
+    "method": "get",
+    "toolName": "economic-get-order-draft",
+    "llmTip": "Returns full details of a draft order."
+  },
+  {
+    "pathPattern": "/accounts",
+    "method": "get",
+    "toolName": "economic-list-accounts",
+    "llmTip": "Returns the chart of accounts. Use filter e.g. filter=accountType$eq:profitAndLoss."
+  },
+  {
+    "pathPattern": "/accounts/{accountNumber}",
+    "method": "get",
+    "toolName": "economic-get-account",
+    "llmTip": "Returns details of a single account by account number."
+  },
+  {
+    "pathPattern": "/journals",
+    "method": "get",
+    "toolName": "economic-list-journals",
+    "llmTip": "Returns list of journals (daybooks)."
+  },
+  {
+    "pathPattern": "/journals/{journalNumber}",
+    "method": "get",
+    "toolName": "economic-get-journal",
+    "llmTip": "Returns details of a specific journal."
+  },
+  {
+    "pathPattern": "/entries",
+    "method": "get",
+    "toolName": "economic-list-entries",
+    "llmTip": "Returns paginated list of account entries (booked transactions). Use filter e.g. filter=account.accountNumber$eq:1000."
+  },
+  {
+    "pathPattern": "/payment-terms",
+    "method": "get",
+    "toolName": "economic-list-payment-terms",
+    "llmTip": "Returns list of payment terms available in the agreement."
+  },
+  {
+    "pathPattern": "/vat-zones",
+    "method": "get",
+    "toolName": "economic-list-vat-zones",
+    "llmTip": "Returns list of VAT zones."
+  },
+  {
+    "pathPattern": "/customer-groups",
+    "method": "get",
+    "toolName": "economic-list-customer-groups",
+    "llmTip": "Returns list of customer groups."
+  },
+  {
+    "pathPattern": "/supplier-groups",
+    "method": "get",
+    "toolName": "economic-list-supplier-groups",
+    "llmTip": "Returns list of supplier groups."
+  },
+  {
+    "pathPattern": "/product-groups",
+    "method": "get",
+    "toolName": "economic-list-product-groups",
+    "llmTip": "Returns list of product groups."
+  },
+  {
+    "pathPattern": "/units",
+    "method": "get",
+    "toolName": "economic-list-units",
+    "llmTip": "Returns list of units of measure."
+  },
+  {
+    "pathPattern": "/departments",
+    "method": "get",
+    "toolName": "economic-list-departments",
+    "llmTip": "Returns list of departments."
+  },
+  {
+    "pathPattern": "/currencies",
+    "method": "get",
+    "toolName": "economic-list-currencies",
+    "llmTip": "Returns list of currencies configured in the agreement."
+  },
+  {
+    "pathPattern": "/layouts",
+    "method": "get",
+    "toolName": "economic-list-layouts",
+    "llmTip": "Returns list of available document layouts."
+  }
+]

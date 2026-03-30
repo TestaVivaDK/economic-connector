@@ -1,0 +1,228 @@
+{
+  "manifest_version": "0.3",
+  "name": "e-conomic-connector",
+  "display_name": "e-conomic",
+  "version": "1.0.0",
+  "description": "Connect Claude to e-conomic — manage customers, invoices, products, suppliers, orders, journals, and accounts via the REST API.",
+  "long_description": "Full access to e-conomic through the REST API. Manage customers, create and book invoices, handle products and suppliers, work with orders, post journal entries, and query accounting data. Authenticates via App Secret Token and Agreement Grant Token.",
+  "author": {
+    "name": "TestaViva"
+  },
+  "license": "MIT",
+  "server": {
+    "type": "binary",
+    "entry_point": "server/e-conomic-connector",
+    "mcp_config": {
+      "command": "${__dirname}/server/e-conomic-connector",
+      "args": [],
+      "env": {
+        "ECONOMIC_APP_SECRET_TOKEN": "${user_config.app_secret_token}",
+        "ECONOMIC_AGREEMENT_GRANT_TOKEN": "${user_config.agreement_grant_token}"
+      },
+      "platform_overrides": {
+        "win32": {
+          "command": "${__dirname}/server/e-conomic-connector.exe"
+        },
+        "darwin": {
+          "command": "${__dirname}/server/e-conomic-connector-darwin"
+        }
+      }
+    }
+  },
+  "user_config": {
+    "app_secret_token": {
+      "type": "string",
+      "title": "App Secret Token",
+      "description": "Your e-conomic App Secret Token (from the Developer Network)",
+      "required": true
+    },
+    "agreement_grant_token": {
+      "type": "string",
+      "title": "Agreement Grant Token",
+      "description": "Your e-conomic Agreement Grant Token (grants access to a specific agreement)",
+      "required": true
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ]
+  },
+  "tools": [
+    {
+      "name": "economic-auth-status",
+      "description": "Check e-conomic authentication status"
+    },
+    {
+      "name": "economic-list-customers",
+      "description": "List customers with filtering and pagination"
+    },
+    {
+      "name": "economic-get-customer",
+      "description": "Get a specific customer by number"
+    },
+    {
+      "name": "economic-create-customer",
+      "description": "Create a new customer"
+    },
+    {
+      "name": "economic-update-customer",
+      "description": "Update an existing customer"
+    },
+    {
+      "name": "economic-delete-customer",
+      "description": "Delete a customer"
+    },
+    {
+      "name": "economic-list-invoices-drafts",
+      "description": "List draft invoices"
+    },
+    {
+      "name": "economic-get-invoice-draft",
+      "description": "Get a specific draft invoice"
+    },
+    {
+      "name": "economic-create-invoice-draft",
+      "description": "Create a new draft invoice"
+    },
+    {
+      "name": "economic-book-invoice",
+      "description": "Book a draft invoice"
+    },
+    {
+      "name": "economic-list-invoices-booked",
+      "description": "List booked invoices"
+    },
+    {
+      "name": "economic-get-invoice-booked",
+      "description": "Get a specific booked invoice"
+    },
+    {
+      "name": "economic-list-products",
+      "description": "List products"
+    },
+    {
+      "name": "economic-get-product",
+      "description": "Get a specific product"
+    },
+    {
+      "name": "economic-create-product",
+      "description": "Create a new product"
+    },
+    {
+      "name": "economic-update-product",
+      "description": "Update a product"
+    },
+    {
+      "name": "economic-delete-product",
+      "description": "Delete a product"
+    },
+    {
+      "name": "economic-list-suppliers",
+      "description": "List suppliers"
+    },
+    {
+      "name": "economic-get-supplier",
+      "description": "Get a specific supplier"
+    },
+    {
+      "name": "economic-create-supplier",
+      "description": "Create a new supplier"
+    },
+    {
+      "name": "economic-update-supplier",
+      "description": "Update a supplier"
+    },
+    {
+      "name": "economic-delete-supplier",
+      "description": "Delete a supplier"
+    },
+    {
+      "name": "economic-list-accounts",
+      "description": "List chart of accounts"
+    },
+    {
+      "name": "economic-get-account",
+      "description": "Get a specific account"
+    },
+    {
+      "name": "economic-list-orders-drafts",
+      "description": "List draft orders"
+    },
+    {
+      "name": "economic-get-order-draft",
+      "description": "Get a specific draft order"
+    },
+    {
+      "name": "economic-create-order-draft",
+      "description": "Create a new draft order"
+    },
+    {
+      "name": "economic-list-journals",
+      "description": "List journals"
+    },
+    {
+      "name": "economic-get-journal",
+      "description": "Get a specific journal"
+    },
+    {
+      "name": "economic-create-journal-entry",
+      "description": "Create entries in a journal"
+    },
+    {
+      "name": "economic-list-entries",
+      "description": "List account entries"
+    },
+    {
+      "name": "economic-list-payment-terms",
+      "description": "List payment terms"
+    },
+    {
+      "name": "economic-list-vat-zones",
+      "description": "List VAT zones"
+    },
+    {
+      "name": "economic-list-customer-groups",
+      "description": "List customer groups"
+    },
+    {
+      "name": "economic-list-supplier-groups",
+      "description": "List supplier groups"
+    },
+    {
+      "name": "economic-list-product-groups",
+      "description": "List product groups"
+    },
+    {
+      "name": "economic-list-units",
+      "description": "List units of measure"
+    },
+    {
+      "name": "economic-list-departments",
+      "description": "List departments"
+    },
+    {
+      "name": "economic-list-currencies",
+      "description": "List currencies"
+    },
+    {
+      "name": "economic-list-layouts",
+      "description": "List layouts"
+    },
+    {
+      "name": "economic-self",
+      "description": "Get current agreement/company info"
+    }
+  ],
+  "keywords": [
+    "e-conomic",
+    "accounting",
+    "invoices",
+    "customers",
+    "erp",
+    "bookkeeping",
+    "denmark"
+  ]
+}

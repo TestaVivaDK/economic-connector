@@ -160,5 +160,41 @@
     "method": "get",
     "toolName": "economic-list-layouts",
     "llmTip": "Returns list of available document layouts."
+  },
+  {
+    "pathPattern": "/accounting-years",
+    "method": "get",
+    "toolName": "economic-list-accounting-years",
+    "llmTip": "Returns list of accounting years (e.g. 2024, 2025, 2026). Use to discover valid year values for other accounting-year endpoints."
+  },
+  {
+    "pathPattern": "/accounting-years/{year}",
+    "method": "get",
+    "toolName": "economic-get-accounting-year",
+    "llmTip": "Returns details of a specific accounting year including its periods."
+  },
+  {
+    "pathPattern": "/accounting-years/{year}/periods",
+    "method": "get",
+    "toolName": "economic-list-accounting-year-periods",
+    "llmTip": "Returns the periods (months) for a given accounting year. Each period has a periodNumber (1-12), fromDate, and toDate."
+  },
+  {
+    "pathPattern": "/accounting-years/{year}/periods/{periodNumber}/entries",
+    "method": "get",
+    "toolName": "economic-list-period-entries",
+    "llmTip": "Returns all booked entries for a specific period in an accounting year. Use year (e.g. 2026) and periodNumber (e.g. 3 for March). Supports filter, sort, pagesize, skippages. Essential for fetching monthly transaction data for trial balance and reporting."
+  },
+  {
+    "pathPattern": "/accounting-years/{year}/entries",
+    "method": "get",
+    "toolName": "economic-list-accounting-year-entries",
+    "llmTip": "Returns all booked entries for an entire accounting year."
+  },
+  {
+    "pathPattern": "/accounting-years/{year}/totals",
+    "method": "get",
+    "toolName": "economic-list-accounting-year-totals",
+    "llmTip": "Returns account totals (balances) for an accounting year. Useful for trial balance / råbalance reports."
   }
 ]

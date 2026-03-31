@@ -76,8 +76,9 @@ func registerEndpointTools(s *server.MCPServer, ec *economic.Client) {
 			opts = append(opts, mcp.WithString(p, mcp.Required(), mcp.Description(fmt.Sprintf("Path parameter: %s", p))))
 		}
 
-		// Query params (optional) — only for collection endpoints (no path params).
-		if len(pathParams) == 0 {
+		// Query params (optional) — for collection endpoints (path does not end with a path param).
+		isCollection := !strings.HasSuffix(ep.PathPattern, "}")
+		if isCollection {
 			for _, qp := range queryParamDefs {
 				opts = append(opts, mcp.WithString(qp.name, mcp.Description(qp.desc)))
 			}
@@ -98,7 +99,7 @@ func registerEndpointTools(s *server.MCPServer, ec *economic.Client) {
 
 			// Collect query params.
 			queryParams := make(map[string]string)
-			if len(pathParams) == 0 {
+			if isCollection {
 				for _, qp := range queryParamDefs {
 					val := req.GetString(qp.name, "")
 					if val != "" {

@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "e-conomic-connector",
   "display_name": "e-conomic",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Connect Claude to e-conomic — manage customers, invoices, products, suppliers, orders, journals, and accounts via the REST API.",
   "long_description": "Full access to e-conomic through the REST API. Manage customers, create and book invoices, handle products and suppliers, work with orders, post journal entries, and query accounting data. Authenticates via App Secret Token and Agreement Grant Token.",
   "author": {
@@ -11,9 +11,9 @@
   "license": "MIT",
   "server": {
     "type": "binary",
-    "entry_point": "server/e-conomic-connector",
+    "entry_point": "server/e-conomic-connector-1.1.1",
     "mcp_config": {
-      "command": "${__dirname}/server/e-conomic-connector",
+      "command": "${__dirname}/server/e-conomic-connector-1.1.1",
       "args": [],
       "env": {
         "ECONOMIC_APP_SECRET_TOKEN": "${user_config.app_secret_token}",
@@ -21,10 +21,10 @@
       },
       "platform_overrides": {
         "win32": {
-          "command": "${__dirname}/server/e-conomic-connector.exe"
+          "command": "${__dirname}/server/e-conomic-connector-1.1.1.exe"
         },
         "darwin": {
-          "command": "${__dirname}/server/e-conomic-connector-darwin"
+          "command": "${__dirname}/server/e-conomic-connector-1.1.1-darwin"
         }
       }
     }
@@ -214,6 +214,30 @@
     {
       "name": "economic-self",
       "description": "Get current agreement/company info"
+    },
+    {
+      "name": "economic-list-accounting-years",
+      "description": "List accounting years"
+    },
+    {
+      "name": "economic-get-accounting-year",
+      "description": "Get a specific accounting year"
+    },
+    {
+      "name": "economic-list-accounting-year-periods",
+      "description": "List periods in an accounting year"
+    },
+    {
+      "name": "economic-list-period-entries",
+      "description": "List entries for a specific period in an accounting year"
+    },
+    {
+      "name": "economic-list-accounting-year-entries",
+      "description": "List all entries for an accounting year"
+    },
+    {
+      "name": "economic-list-accounting-year-totals",
+      "description": "List account totals for an accounting year"
     }
   ],
   "keywords": [

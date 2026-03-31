@@ -105,6 +105,17 @@ make build
 | `economic-create-journal-entry` | Create entries in a journal |
 | `economic-list-entries` | List booked account entries |
 
+### Accounting Years & Periods
+
+| Tool | Description |
+|------|-------------|
+| `economic-list-accounting-years` | List accounting years |
+| `economic-get-accounting-year` | Get a specific accounting year |
+| `economic-list-accounting-year-periods` | List periods (months) in an accounting year |
+| `economic-list-period-entries` | List entries for a specific period (e.g. March 2026) |
+| `economic-list-accounting-year-entries` | List all entries for an entire accounting year |
+| `economic-list-accounting-year-totals` | Account totals/balances for an accounting year |
+
 ### Reference Data
 
 | Tool | Description |
@@ -141,6 +152,8 @@ Once connected, you can ask Claude things like:
 - *"Show me all products in product group 2"*
 - *"What's our chart of accounts?"*
 - *"Create a journal entry debiting account 1000 and crediting account 2000 for 5000 DKK"*
+- *"Get all entries for March 2026 (accounting year 2026, period 3)"*
+- *"Show me the account totals for 2025"*
 
 ## Running Locally
 
